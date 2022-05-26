@@ -1,9 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#define DVORAK_LAYER 0
-#define QWERTY_LAYER 1
-#define LED_LAYER 2
-
 // I'm following example 6 at https://github.com/qmk/qmk_firmware/blob/master/docs/feature_tap_dance.md
 // to make a custom tap dance key that will toggle one layer when tapped (Dvorak -> QWERTY), and
 // momentarily enable another (LED controls) when held.
@@ -21,6 +17,12 @@ typedef struct {
 
 enum {
     LDANCE,
+};
+
+enum {
+    DVORAK_LAYER,
+    QWERTY_LAYER,
+    LED_LAYER,
 };
 
 td_state_t cur_dance(qk_tap_dance_state_t *state);
